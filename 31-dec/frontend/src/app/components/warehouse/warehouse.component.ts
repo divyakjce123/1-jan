@@ -18,6 +18,11 @@ export class WarehouseVisualizerComponent implements OnInit {
     return Array.from({ length: numAisles - 1 }, (_, i) => i);
   }
 
+  getAisleArray(numAisles: number): number[] {
+    if (!numAisles || numAisles <= 0) return [];
+    return Array.from({ length: numAisles }, (_, i) => i);
+  }
+
   getDeepGapArray(depth: number): number[] {
     if (!depth || depth <= 1) return [];
     return Array.from({ length: depth - 1 }, (_, i) => i);

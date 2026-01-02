@@ -303,20 +303,25 @@
                     <!-- Dynamic Aisle Configuration - Appears when num_aisles > 0 -->
                     <div *ngIf="workstation.left_side_config.num_aisles > 0">
                       <div class="accordion" id="leftAislesAccordion{{ i }}">
-                        <div class="accordion-item">
+                        <div 
+                          class="accordion-item"
+                          *ngFor="let aisleIndex of getAisleArray(workstation.left_side_config.num_aisles); let a = index"
+                        >
                           <h2 class="accordion-header">
                             <button
                               class="accordion-button"
+                              [class.collapsed]="a !== 0"
                               type="button"
                               data-bs-toggle="collapse"
-                              [attr.data-bs-target]="'#leftAislesCollapse' + i"
+                              [attr.data-bs-target]="'#leftAislesCollapse' + i + '_' + a"
                             >
-                              Aisle Configuration
+                              Aisle {{ a + 1 }} Configuration
                             </button>
                           </h2>
                           <div
-                            [id]="'leftAislesCollapse' + i"
-                            class="accordion-collapse collapse show"
+                            [id]="'leftAislesCollapse' + i + '_' + a"
+                            class="accordion-collapse collapse"
+                            [class.show]="a === 0"
                           >
                             <div class="accordion-body p-2">
                               <!-- Number of Deep -->
@@ -619,20 +624,25 @@
                     <!-- Dynamic Aisle Configuration - Appears when num_aisles > 0 -->
                     <div *ngIf="workstation.right_side_config.num_aisles > 0">
                       <div class="accordion" id="rightAislesAccordion{{ i }}">
-                        <div class="accordion-item">
+                        <div 
+                          class="accordion-item"
+                          *ngFor="let aisleIndex of getAisleArray(workstation.right_side_config.num_aisles); let a = index"
+                        >
                           <h2 class="accordion-header">
                             <button
                               class="accordion-button"
+                              [class.collapsed]="a !== 0"
                               type="button"
                               data-bs-toggle="collapse"
-                              [attr.data-bs-target]="'#rightAislesCollapse' + i"
+                              [attr.data-bs-target]="'#rightAislesCollapse' + i + '_' + a"
                             >
-                              Aisle Configuration
+                              Aisle {{ a + 1 }} Configuration
                             </button>
                           </h2>
                           <div
-                            [id]="'rightAislesCollapse' + i"
-                            class="accordion-collapse collapse show"
+                            [id]="'rightAislesCollapse' + i + '_' + a"
+                            class="accordion-collapse collapse"
+                            [class.show]="a === 0"
                           >
                             <div class="accordion-body p-2">
                               <!-- Number of Deep -->
