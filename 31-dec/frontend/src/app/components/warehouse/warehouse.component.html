@@ -244,7 +244,7 @@
                       Left Side Configuration
                     </h6>
 
-                    <div class="row g-2 mb-2 align-items-center">
+                    <!-- <div class="row g-2 mb-2 align-items-center">
                       <div class="col-6">
                         <label class="form-label small mb-0"
                           >Number of Floors (Y_position)</label
@@ -261,9 +261,9 @@
                           (blur)="onSideConfigChange(i, 'left')"
                         />
                       </div>
-                    </div>
+                    </div> -->
 
-                    <div class="row g-2 mb-2 align-items-center">
+                    <!-- <div class="row g-2 mb-2 align-items-center">
                       <div class="col-6">
                         <label class="form-label small mb-0"
                           >Number of Rows (X_position)</label
@@ -279,7 +279,7 @@
                           step="1"
                         />
                       </div>
-                    </div>
+                    </div> -->
 
                     <div class="row g-2 mb-2 align-items-center">
                       <div class="col-6">
@@ -324,6 +324,48 @@
                             [class.show]="a === 0"
                           >
                             <div class="accordion-body p-2">
+                              <div class="row g-2 mb-3 align-items-center">
+                                <div class="col-6">
+                                  <label class="form-label small mb-0"
+                                    >Number of Floors</label
+                                  >
+                                </div>
+                                <div class="col-6">
+                                  <input
+                                    type="number"
+                                    class="form-control form-control-sm"
+                                    [(ngModel)]="
+                                      workstation.left_side_config.num_floors
+                                    "
+                                    min="1"
+                                    max="20"
+                                    step="1"
+                                    (blur)="onSideConfigChange(i, 'left')"
+                                  />
+                                </div>
+                              </div>
+
+                              <div class="row g-2 mb-3 align-items-center">
+                                <div class="col-6">
+                                  <label class="form-label small mb-0"
+                                    >Number of Rows</label
+                                  >
+                                </div>
+                                <div class="col-6">
+                                  <input
+                                    type="number"
+                                    class="form-control form-control-sm"
+                                    [(ngModel)]="
+                                      workstation.left_side_config.num_rows
+                                    "
+                                    min="1"
+                                    max="20"
+                                    step="1"
+                                    (blur)="onSideConfigChange(i, 'left')"
+                                  />
+                                </div>
+                              </div>
+
                               <!-- Number of Deep -->
                               <div class="row g-2 mb-3 align-items-center">
                                 <div class="col-6">
@@ -565,7 +607,7 @@
                       Right Side Configuration
                     </h6>
 
-                    <div class="row g-2 mb-2 align-items-center">
+                    <!-- <div class="row g-2 mb-2 align-items-center">
                       <div class="col-6">
                         <label class="form-label small mb-0"
                           >Number of Floors (Y_position)</label
@@ -582,9 +624,9 @@
                           (blur)="onSideConfigChange(i, 'right')"
                         />
                       </div>
-                    </div>
+                    </div> -->
 
-                    <div class="row g-2 mb-2 align-items-center">
+                    <!-- <div class="row g-2 mb-2 align-items-center">
                       <div class="col-6">
                         <label class="form-label small mb-0"
                           >Number of Rows (X_position)</label
@@ -600,7 +642,7 @@
                           step="1"
                         />
                       </div>
-                    </div>
+                    </div> -->
 
                     <div class="row g-2 mb-2 align-items-center">
                       <div class="col-6">
@@ -645,6 +687,48 @@
                             [class.show]="a === 0"
                           >
                             <div class="accordion-body p-2">
+
+                              <div class="row g-2 mb-3 align-items-center">
+                                <div class="col-6">
+                                  <label class="form-label small mb-0"
+                                    >Number of Floors</label
+                                  >
+                                </div>
+                                <div class="col-6">
+                                  <input
+                                    type="number"
+                                    class="form-control form-control-sm"
+                                    [(ngModel)]="
+                                      workstation.right_side_config.num_floors
+                                    "
+                                    min="1"
+                                    max="20"
+                                    step="1"
+                                    (blur)="onSideConfigChange(i, 'right')"
+                                  />
+                                </div>
+                              </div>
+
+                              <div class="row g-2 mb-3 align-items-center">
+                                <div class="col-6">
+                                  <label class="form-label small mb-0"
+                                    >Number of Rows</label
+                                  >
+                                </div>
+                                <div class="col-6">
+                                  <input
+                                    type="number"
+                                    class="form-control form-control-sm"
+                                    [(ngModel)]="
+                                      workstation.right_side_config.num_rows
+                                    "
+                                    min="1"
+                                    max="20"
+                                    step="1"
+                                    (blur)="onSideConfigChange(i, 'right')"
+                                  />
+                                </div>
+                              </div>
                               <!-- Number of Deep -->
                               <div class="row g-2 mb-3 align-items-center">
                                 <div class="col-6">
