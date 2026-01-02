@@ -794,8 +794,31 @@ export class VisualizationComponent
   }
 
   private drawCentralAisle(group: THREE.Group, aisle: AisleData) {
-  }
+    const { width, length, height } = aisle.dimensions;
+    const { x, y, z } = aisle.position; 
+    // Create Aisle Group
+    const aisleGroup = new THREE.Group();
+    aisleGroup.name = `central-aisle-${aisle.id}`;
 
+    aisleGroup.position.set(
+      x + width / 2,
+      y + length / 2,
+      z 
+    );
+
+    // Draw only outline (edges) to show empty space
+    const geometry = new THREE.BoxGeometry(width, length);
+    const edges = new THREE.EdgesGeometry(geometry);
+    const edgeMaterial = new THREE.LineDashedMaterial({
+      color: 0x000000,
+      linewidth: 2
+    });
+    const wireframe = new THREE.LineSegments(edges, edgeMaterial);
+    wireframe.computeLineDistances();
+    aisleGroup.add(wireframe);
+
+    group.add(aisleGroup);
+  }
 
   private drawGapAisle(group: THREE.Group, aisle: AisleData) {
     const { width, length, height } = aisle.dimensions;
