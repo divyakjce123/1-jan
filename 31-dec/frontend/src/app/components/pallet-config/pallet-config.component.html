@@ -176,6 +176,31 @@
               </option>
             </select>
           </div>
+
+          <!-- Aisle -->
+          <div class="col-3">
+            <label class="form-label small mb-1">Aisle</label>
+            <select class="form-select form-select-sm" 
+                    [(ngModel)]="pallet.position.col"
+                    (ngModelChange)="onPalletChange()">
+              <option *ngFor="let aisle of getAisleOptions()" [ngValue]="aisle">
+                {{ aisle }}
+              </option>
+            </select>
+          </div>
+
+          <!-- Depth -->
+          <div class="col-3">
+            <label class="form-label small mb-1">Deep</label>
+            <select class="form-select form-select-sm" 
+                    [(ngModel)]="pallet.position.depth"
+                    (ngModelChange)="onPalletChange()">
+              <option *ngFor="let depth of getDepthOptions()" [ngValue]="depth">
+                {{ depth }}
+              </option> 
+            </select>
+          </div>
+
           <!-- Floor -->
           <div class="col-3">
             <label class="form-label small mb-1">Floor</label>
@@ -197,30 +222,6 @@
               <option *ngFor="let row of getRowOptions()" [ngValue]="row">
                 {{ row }}
               </option>
-            </select>
-          </div>
-          
-          <!-- Aisle -->
-          <div class="col-3">
-            <label class="form-label small mb-1">Aisle</label>
-            <select class="form-select form-select-sm" 
-                    [(ngModel)]="pallet.position.col"
-                    (ngModelChange)="onPalletChange()">
-              <option *ngFor="let aisle of getAisleOptions()" [ngValue]="aisle">
-                {{ aisle }}
-              </option>
-            </select>
-          </div>
-
-          <!-- Depth -->
-          <div class="col-3">
-            <label class="form-label small mb-1">Depth</label>
-            <select class="form-select form-select-sm" 
-                    [(ngModel)]="pallet.position.depth"
-                    (ngModelChange)="onPalletChange()">
-              <option *ngFor="let depth of getDepthOptions()" [ngValue]="depth">
-                {{ depth }}
-              </option> 
             </select>
           </div>
         </div>

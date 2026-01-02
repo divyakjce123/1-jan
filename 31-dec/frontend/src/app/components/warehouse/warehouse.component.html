@@ -358,7 +358,7 @@
                                 >
                                   <div class="col-5">
                                     <label class="form-label small mb-0"
-                                      >Gap {{ j + 1 }}-{{ j + 2 }}</label
+                                      >Gap Between Deep</label
                                     >
                                   </div>
                                   <div class="col-4">
@@ -675,7 +675,7 @@
                                 >
                                   <div class="col-5">
                                     <label class="form-label small mb-0"
-                                      >Gap {{ j + 1 }}-{{ j + 2 }}</label
+                                      >Gap Between Deep</label
                                     >
                                   </div>
                                   <div class="col-4">
@@ -910,10 +910,10 @@
                         [pallet]="pallet"
                         [palletIndex]="pIndex"
                         [workstationIndex]="i"
-                        [maxFloors]="getMaxFloors(workstation)"
-                        [maxRows]="getMaxRows(workstation)"
                         [maxAisles]="getMaxAisles(workstation)"
                         [maxDepth]="getMaxDepth(workstation)"
+                        [maxFloors]="getMaxFloors(workstation)"
+                        [maxRows]="getMaxRows(workstation)"
                         (palletChange)="onPalletChange(i, pIndex, $event)"
                         (removePallet)="removePallet(i, pIndex)"
                       >
